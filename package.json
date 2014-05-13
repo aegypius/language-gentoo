@@ -1,0 +1,18 @@
+{
+  "name": "language-gentoo",
+  "version": "0.1.0",
+  "description": "Gentoo Linux development package",
+  "repository": {
+    "type" : "git",
+    "url"  : "https://github.com/aegypius/language-gentoo"
+  },
+  "bugs" : {
+    "url" : "https://github.com/aegypius/language-gentoo/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
