@@ -1,0 +1,4 @@
+'.source.shell.ebuild':
+  'Ebuild Template':
+    'prefix': 'eapi'
+    'body': '# Copyright 1999-2014 Gentoo Foundation\n# Distributed under the terms of the GNU General Public License v2\n# $Header: $\n\nEAPI=${1:5}\n\nDESCRIPTION="${2}"\nHOMEPAGE="${3}"\nSRC_URI="${4}"\n\nLICENSE="${5}"\nSLOT="${6:0}"\nKEYWORDS="${7}"\nIUSE="${8}"\n\nDEPEND="${9}"\nRDEPEND="${10:${9}}"\n$0\n'
