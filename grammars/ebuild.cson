@@ -58,12 +58,25 @@
   'inherit':
     'patterns' : [
       {
-        'begin': '\\b(inherit)\s+(git-2|flag-o-matic|python)'
-        'end':   '\\n'
-        'endCaptures':
-          '0':
-            'name': 'storage.modifier.c'
+        'begin': '\\b(inherit)\\b'
+        'end': '\\n'
+        'beginCaptures':
+          '0' :
+            'name': 'storage.modifier.shell'
+        'patterns' : [
+          {
+            'include' : '#eclass'
+          }
+        ]
       }
+    ]
+  'eclass':
+    'patterns' : [
+      'begin' : '\\b\\s+(alternative|apache-(2|module)|aspell-dict|autotools(-(multilib|utils))?|base|bash-completion(-r1)?|boost-utils|bsdmk|bzr|cannadic|cdrom|check-reqs|chromium|clutter|cmake-utils|confutils|cron|cvs|darcs|depend.(apache|php)|distutils|elisp(-common)?|emboss|enlightenment|eutils|fdo-mime|findlib|fixheadtails|flag-o-matic|font|fortran-2|freedict|gdesklets|gems|ghc-package|git-2|gnome2-utils|gnome\\.org|gnustep-(2|base)|go-mono|gpe|gst-plugins-(bad|base|good|ugly)|gtk-sharp-module|haskell-cabal|intel-sdp|java-(pkg|pkg-opt|virtuals|vm)-2|kde4-(base|fucntions|meta(-pkg)?)|l10n|latex-package|leechcraft|libtool|linux-(info|mod)|makeedit|mercurial|mono|multilib|multiprocessing|myspell-r2|mysql(-(autotools|cmake|v2))?|mythtv(-plugins)?|nsplugins|nvidia-driver|oasis|obs-(download|service)|office-ext|openib|pam|pax-utils|perl-module|php(-common-r1|confutils|-ext(base-r1|pecl-r2|source-r2)|-ezc|-lib-r1|-pear(-lib)?-r1)|prefix|python(-(any-r1|distutils-ng|r1|single-r1|utils-r1))?|qmail|qt4-(build|r2)|rpm|ruby-(fakegem|ng(-gnome2)?)|savedconfig|scons-utils|selinux-policy-2|sgml-catalog|ssl-cert|subversion|systemd|texlive-(common|module)|toolchain-funcs|twisted|udev|unpacker|user|vala|vcs-snapshot|vdr-plugin(-2)?|versionator|virtualx|virtuoso|vmware-bundle|waf-utils|wxwidgets|xemacs-(elisp(-common)?|packages)|xfconf|x-modular|xorg-2)'
+      'captures' :
+        '1':
+          'name': 'entity.other.inherited-class.eclass'
+      'end': '\\b'
     ]
   'case-clause':
     'patterns': [
