@@ -9,6 +9,9 @@
     'include': '#inherit'
   }
   {
+    'include': '#eapi-keywords'
+  }
+  {
     'include': '#comment'
   }
   {
@@ -77,6 +80,27 @@
         '1':
           'name': 'entity.other.inherited-class.eclass'
       'end': '\\b'
+    ]
+  'eapi-keywords':
+    'patterns' : [
+      {
+        'begin': '\\b(EAPI|DESCRIPTION|HOMEPAGE|SRC_URI|LICENSE|SLOT|KEYWORDS|IUSE|DEPEND|RDEPEND)='
+        'end': '\\n'
+        'captures':
+          '1':
+            'name': 'support.constant.core.ebuild'
+        'patterns' : [
+          {
+            'include': '#string'
+          }
+          {
+            'include': '#variable'
+          }
+          {
+            'include': '#constant'
+          }
+        ]
+      }
     ]
   'case-clause':
     'patterns': [
