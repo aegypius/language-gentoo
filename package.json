@@ -9,6 +9,11 @@
   "bugs": {
     "url": "https://github.com/aegypius/language-gentoo/issues"
   },
+  "main": "./lib/index",
+  "activationEvents": [
+    "ebuild:digest",
+    "core:save"
+  ],
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
