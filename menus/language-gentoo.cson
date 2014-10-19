@@ -1,14 +1,16 @@
 'menu': [
   {
     'label': 'Packages'
-    'submenu': {
-      'label': 'Gentoo Commands'
-      'submenu': [
-        {
-          'label':   'Update ebuild manifest'
-          'command': 'ebuild:digest'
-        }
-      ]
-    }
+    'submenu': [
+      {
+        'label': 'Gentoo Commands'
+        'submenu': [
+          {
+            'label':   'Update ebuild manifest'
+            'command': 'ebuild:digest'
+          }
+        ]
+      }
+    ]
   }
 ]
