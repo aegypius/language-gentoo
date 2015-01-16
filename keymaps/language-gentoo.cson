@@ -1,2 +1,2 @@
-'.editor':
+'.atom-text-editor':
   'f9': 'ebuild:digest'
