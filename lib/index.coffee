@@ -8,10 +8,8 @@ module.exports =
     {digest} = require "./ebuild"
 
     atom.commands.add 'atom-text-editor',
-      "ebuild:digest", -> digest()
-
-    atom.commands.add 'atom-text-editor',
-      "core:save", ->
+      "ebuild:digest": -> digest()
+      "core:save": ->
         digest() if atom.config.get 'language-gentoo.updateManifestOnSave'
 
   deactivate: ->
