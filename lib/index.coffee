@@ -1,6 +1,8 @@
 module.exports =
-  configDefaults:
-    updateManifestOnSave: false
+  config:
+    updateManifestOnSave:
+      type: 'boolean'
+      default: false
 
   activate: (state) ->
     {digest} = require "./ebuild"
