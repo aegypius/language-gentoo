@@ -2,7 +2,7 @@
 
 module.exports =
   digest: ()->
-    activeEditor = atom.workspace.getActiveEditor()
+    activeEditor = atom.workspace.getActiveTextEditor()
 
     if activeEditor
       filePath = activeEditor.getPath()
