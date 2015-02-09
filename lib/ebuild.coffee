@@ -2,12 +2,12 @@
 
 module.exports =
   digest: ()->
-    activeEditor = atom.workspace.getActiveTextEditor()
+    activeEditor  = atom.workspace.getActiveTextEditor()
+    notifications = atom.notifications
 
     if activeEditor
       filePath = activeEditor.getPath()
       if /\.ebuild$/.test filePath
         exec "ebuild #{filePath} digest", (err, stdout, stderr)->
-          console.log   stdout if stdout
-          if err
-            throw new Error stderr
+          notifications.addError stderr, dismissable: true if err
+          notifications.addSuccess "Manifest updated" unless err
