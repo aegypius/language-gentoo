@@ -5,8 +5,7 @@ describe "use grammar", ->
 
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage("language-gentoo").fail (reason) ->
-        console.log reason
+      atom.packages.activatePackage("language-gentoo")
 
     runs ->
       grammar = atom.grammars.grammarForScopeName "source.gentoo.use"
@@ -50,5 +49,3 @@ describe "use grammar", ->
       expect(lines[1][5]).toEqual value: "0.2.13", scopes: ["source.gentoo.use", "atom", "version"]
       expect(lines[1][7]).toEqual value: "upnp-av", scopes: ["source.gentoo.use", "use-flag.add"]
       expect(lines[1][9]).toEqual value: "tracker", scopes: ["source.gentoo.use", "use-flag.add"]
-
-      console.debug lines

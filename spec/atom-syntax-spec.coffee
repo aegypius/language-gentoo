@@ -4,8 +4,7 @@ describe "gentoo atom grammar", ->
 
   beforeEach ->
     waitsForPromise ->
-      atom.packages.activatePackage("language-gentoo").fail (reason) ->
-        console.log reason
+      atom.packages.activatePackage("language-gentoo")
 
     runs ->
       grammar = atom.grammars.grammarForScopeName "source.gentoo"
