@@ -4,29 +4,29 @@
 'fileTypes': ['use']
 'patterns': [
   {
-    'include': '#gentoo-atom-syntax'
+    'include': 'source.gentoo'
   },
   {
-    'match': '^#.*$'
+    'match': '^#.*\\n'
     'name': 'comment'
+  },
+  {
+    'include': '#gentoo-use-line'
   }
 ]
 'repository':
-  'gentoo-atom-syntax':
-    'patterns' : [
+  'gentoo-use-line':
+    'patterns': [
       {
-        'match': "^(<=?|=|>=?)?(\\b.*\\b)\/(\\b\\w+(?:-[a-z]+)*\\b)(?:(?:-([\\d\\.]*(?:_(?:alpha|beta|pre|rc|p)\\d*)?)(?:-(r\\d+))?))?"
-        'name': 'atom'
+        'match': "\\s([^-][a-z0-9-]+)"
         'captures':
           '1':
-            'name': 'operator'
-          '2':
-            'name': 'category'
-          '3':
-            'name': 'package'
-          '4':
-            'name': 'version'
-          '5':
-            'name': 'revision'
+            'name': 'use-flag.add'
+      },
+      {
+        'match': "\\s(-[a-z0-9-]+)"
+        'captures':
+          '1':
+            'name': 'use-flag.remove'
       }
     ]
