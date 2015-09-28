@@ -1,0 +1,32 @@
+# coffeelint: disable=max_line_length
+'name':       'Gentoo use file'
+'scopeName' : 'source.gentoo.use'
+'fileTypes': ['use']
+'patterns': [
+  {
+    'include': '#gentoo-atom-syntax'
+  },
+  {
+    'match': '^#.*$'
+    'name': 'comment'
+  }
+]
+'repository':
+  'gentoo-atom-syntax':
+    'patterns' : [
+      {
+        'match': "^(<=?|=|>=?)?(\\b.*\\b)\/(\\b\\w+(?:-[a-z]+)*\\b)(?:(?:-([\\d\\.]*(?:_(?:alpha|beta|pre|rc|p)\\d*)?)(?:-(r\\d+))?))?"
+        'name': 'atom'
+        'captures':
+          '1':
+            'name': 'operator'
+          '2':
+            'name': 'category'
+          '3':
+            'name': 'package'
+          '4':
+            'name': 'version'
+          '5':
+            'name': 'revision'
+      }
+    ]
