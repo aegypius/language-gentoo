@@ -18,6 +18,14 @@
       "core:save"
     ]
   },
+  "configSchema": {
+    "updateManifestOnSave": {
+      "type": "boolean",
+      "default": false,
+      "title": "Update Manifest on save",
+      "description": "Update digest of files on save"
+    }
+  },
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"

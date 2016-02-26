@@ -1,9 +1,4 @@
 module.exports =
-  config:
-    updateManifestOnSave:
-      type: 'boolean'
-      default: false
-
   activate: (state) ->
     {digest} = require "./ebuild"
 
