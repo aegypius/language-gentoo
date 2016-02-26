@@ -1,0 +1,19 @@
+'name':       'Gentoo keyword file'
+'scopeName' : 'source.gentoo.keywords'
+'fileTypes': ['keywords']
+'patterns': [
+  {
+    'include': 'source.gentoo'
+  },
+  {
+    'match': '^#.*\\n'
+    'name': 'comment'
+  },
+  {
+    'include': '#gentoo-keyword-line'
+  }
+]
+'repository':
+  'gentoo-keyword-line':
+    'patterns': [
+    ]
