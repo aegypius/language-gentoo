@@ -1,13 +1,14 @@
+# coffeelint: disable=max_line_length
 'name':       'Gentoo keyword file'
 'scopeName' : 'source.gentoo.keywords'
 'fileTypes': ['keywords']
 'patterns': [
   {
-    'include': 'source.gentoo'
+    'match': '#.*\\n'
+    'name': 'comment'
   },
   {
-    'match': '^#.*\\n'
-    'name': 'comment'
+    'include': 'source.gentoo'
   },
   {
     'include': '#gentoo-keyword-line'
@@ -16,4 +17,28 @@
 'repository':
   'gentoo-keyword-line':
     'patterns': [
+      {
+        'name': 'keyword'
+        'begin': "(~(?:alpha|amd64|arm(?:64)?|hppa|ia64|m68k|mips|ppc(?:64)?|s390|sh|sparc(?:-fbsd)?|x86(?:-fbsd)?))"
+        'captures':
+          '1':
+            'name': 'testing'
+        'end': '\\b'
+      },
+      {
+        'name': 'keyword'
+        'begin': "(alpha|amd64|arm(?:64)?|hppa|ia64|m68k|mips|ppc(?:64)?|s390|sh|sparc(?:-fbsd)?|x86(?:-fbsd)?)"
+        'captures':
+          '1':
+            'name': 'stable'
+        'end': '\\b'
+      },
+      {
+        'name': 'keyword'
+        'begin': "(\\*\\*)"
+        'captures':
+          '1':
+            'name': 'all'
+        'end': '\\b'
+      },
     ]
