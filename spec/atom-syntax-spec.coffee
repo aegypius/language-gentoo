@@ -16,9 +16,11 @@ describe "gentoo atom grammar", ->
 
   describe "gentoo atom syntax", ->
     it "parse a simple gentoo atom", ->
-      {tokens} = grammar.tokenizeLine "app-editors/atom"
-      expect(tokens[0]).toEqual value: "app-editors", scopes: ["source.gentoo", "atom", "category"]
-      expect(tokens[2]).toEqual value: "atom", scopes: [ "source.gentoo", "atom", "package"]
+      lines = grammar.tokenizeLines """
+        app-editors/atom
+      """
+      expect(lines[0][0]).toEqual value: "app-editors", scopes: ["source.gentoo", "atom", "category"]
+      expect(lines[0][2]).toEqual value: "atom", scopes: [ "source.gentoo", "atom", "package"]
 
     it "parse a gentoo atom with version", ->
       lines = grammar.tokenizeLines """
@@ -107,6 +109,7 @@ describe "gentoo atom grammar", ->
         dev-lang/python:3.2
         dev-lang/python-3.4.3:3.4
         dev-lang/perl-5.20.2:0/5.20
+        x11-base/xorg-server:0/1.16.1
       """
 
       expect(lines[0][0]).toEqual value: "dev-lang", scopes: ["source.gentoo", "atom", "category"]
@@ -127,6 +130,10 @@ describe "gentoo atom grammar", ->
       expect(lines[3][4]).toEqual value: "5.20.2", scopes: ["source.gentoo", "atom", "version"]
       expect(lines[3][6]).toEqual value: "0/5.20", scopes: ["source.gentoo", "atom", "slot"]
 
+      expect(lines[4][0]).toEqual value: "x11-base", scopes: ["source.gentoo", "atom", "category"]
+      expect(lines[4][2]).toEqual value: "xorg-server", scopes: ["source.gentoo", "atom", "package"]
+      expect(lines[4][4]).toEqual value: "0/1.16.1", scopes: ["source.gentoo", "atom", "slot"]
+
 
     it "parse gentoo repository", ->
       lines = grammar.tokenizeLines """
@@ -143,12 +150,14 @@ describe "gentoo atom grammar", ->
       expect(lines[1][4]).toEqual value: "gentoo", scopes: ["source.gentoo", "atom", "repository"]
 
     it "parse a full package atom", ->
-      {tokens} = grammar.tokenizeLine ">=dev-lang/perl-5.22.0_beta1-r6:0/5.22::gentoo"
+      lines = grammar.tokenizeLines """
+        >=dev-lang/perl-5.22.0_beta1-r6:0/5.22::gentoo
+      """
 
-      expect(tokens[0]).toEqual value: ">=", scopes: ["source.gentoo", "atom", "operator"]
-      expect(tokens[1]).toEqual value: "dev-lang", scopes: ["source.gentoo", "atom", "category"]
-      expect(tokens[3]).toEqual value: "perl", scopes: ["source.gentoo", "atom", "package"]
-      expect(tokens[5]).toEqual value: "5.22.0_beta1", scopes: ["source.gentoo", "atom", "version"]
-      expect(tokens[7]).toEqual value: "r6", scopes: ["source.gentoo", "atom", "revision"]
-      expect(tokens[9]).toEqual value: "0/5.22", scopes: ["source.gentoo", "atom", "slot"]
-      expect(tokens[11]).toEqual value: "gentoo", scopes: ["source.gentoo", "atom", "repository"]
+      expect(lines[0][0]).toEqual value: ">=", scopes: ["source.gentoo", "atom", "operator"]
+      expect(lines[0][1]).toEqual value: "dev-lang", scopes: ["source.gentoo", "atom", "category"]
+      expect(lines[0][3]).toEqual value: "perl", scopes: ["source.gentoo", "atom", "package"]
+      expect(lines[0][5]).toEqual value: "5.22.0_beta1", scopes: ["source.gentoo", "atom", "version"]
+      expect(lines[0][7]).toEqual value: "r6", scopes: ["source.gentoo", "atom", "revision"]
+      expect(lines[0][9]).toEqual value: "0/5.22", scopes: ["source.gentoo", "atom", "slot"]
+      expect(lines[0][11]).toEqual value: "gentoo", scopes: ["source.gentoo", "atom", "repository"]
