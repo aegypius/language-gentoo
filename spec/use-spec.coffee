@@ -30,6 +30,7 @@ describe "use grammar", ->
       lines = grammar.tokenizeLines """
         >=dev-lang/perl-5.22.0_beta1-r6:0/5.22::gentoo berkdb -debug test
         >=media-plugins/grilo-plugins-0.2.13 upnp-av tracker
+        =www-servers/nginx-1.7.6 nginx_modules_http_spdy
       """
 
       expect(lines[0][0]).toEqual value: ">=", scopes: ["source.gentoo.use", "atom", "operator"]
@@ -49,3 +50,9 @@ describe "use grammar", ->
       expect(lines[1][5]).toEqual value: "0.2.13", scopes: ["source.gentoo.use", "atom", "version"]
       expect(lines[1][7]).toEqual value: "upnp-av", scopes: ["source.gentoo.use", "use-flag.add"]
       expect(lines[1][9]).toEqual value: "tracker", scopes: ["source.gentoo.use", "use-flag.add"]
+
+      expect(lines[2][0]).toEqual value: "=", scopes: ["source.gentoo.use", "atom", "operator"]
+      expect(lines[2][1]).toEqual value: "www-servers", scopes: ["source.gentoo.use", "atom", "category"]
+      expect(lines[2][3]).toEqual value: "nginx", scopes: ["source.gentoo.use", "atom", "package"]
+      expect(lines[2][5]).toEqual value: "1.7.6", scopes: ["source.gentoo.use", "atom", "version"]
+      expect(lines[2][7]).toEqual value: "nginx_modules_http_spdy", scopes: ["source.gentoo.use", "use-flag.add"]
