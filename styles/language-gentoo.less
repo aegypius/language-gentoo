@@ -1,0 +1,45 @@
+@import "ui-variables";
+
+atom-text-editor::shadow {
+  .source.gentoo {
+    .atom {
+      color: darken(@ui-site-color-1, 20%);
+
+      .operator {
+        color: lighten(@ui-site-color-1, 30%);
+      }
+
+      .category, .package {
+          color: @ui-site-color-1;
+      }
+
+      .version, .revision {
+        color: @ui-site-color-1;
+      }
+    }
+
+    .use-flag {
+      &.add {
+        color: @ui-site-color-2;
+      }
+      &.remove {
+        color: @ui-site-color-3;
+      }
+    }
+
+    .keyword {
+
+      .testing {
+        color: @text-color-warning;
+      }
+
+      .stable {
+        color: @text-color-error;
+      }
+
+      .all {
+        color: @text-color-info;
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+# coffeelint: disable=max_line_length
+'name':       'Gentoo use file'
+'scopeName' : 'source.gentoo.use'
+'fileTypes': ['use']
+'patterns': [
+  {
+    'match': '#.*\\n'
+    'name': 'comment'
+  },
+  {
+    'include': 'source.gentoo'
+  },
+  {
+    'include': '#gentoo-use-line'
+  }
+]
+'repository':
+  'gentoo-use-line':
+    'patterns': [
+      {
+        'match': "\\s([^-][a-z0-9_-]+)"
+        'captures':
+          '1':
+            'name': 'use-flag.add'
+      },
+      {
+        'match': "\\s(-[a-z0-9_-]+)"
+        'captures':
+          '1':
+            'name': 'use-flag.remove'
+      }
+    ]

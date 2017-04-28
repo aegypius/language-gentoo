@@ -1,0 +1,30 @@
+# coffeelint: disable=max_line_length
+'scopeName':  'source.gentoo'
+'patterns': [
+  {
+    'include': '#gentoo-atom-syntax'
+  }
+]
+'repository':
+  'gentoo-atom-syntax':
+    'patterns' : [
+      {
+        'name': 'atom'
+        'match': "(<=?|=|>=?)?([^\/]+)\/((?:\\w+(?:-[a-z]+)*|\\*))(?:(?:-([\\d\\.]*(?:_(?:alpha|beta|pre|rc|p)\\d*)?)(?:-(r\\d+))?))?(?:\:(\\b[^:\\s]+\\b))?(?:::(\\b\\w+\\b))?"
+        'captures':
+          '1':
+            'name': 'operator'
+          '2':
+            'name': 'category'
+          '3':
+            'name': 'package'
+          '4':
+            'name': 'version'
+          '5':
+            'name': 'revision'
+          '6':
+            'name': 'slot'
+          '7':
+            'name': 'repository'
+        }
+      ]

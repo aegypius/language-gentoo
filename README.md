@@ -12,3 +12,5 @@ The “Gentoo Linux development package”.
 ---
 This package is a conversion of Ciaran McCreesh's ebuild.vim file
 which is a part of ```app-vim/gentoo-syntax```.
+
+[![Travis](https://img.shields.io/travis/aegypius/language-gentoo.svg?style=flat-square)]()

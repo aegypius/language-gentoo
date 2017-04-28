@@ -10,14 +10,6 @@
     "url": "https://github.com/aegypius/language-gentoo/issues"
   },
   "main": "./lib/index",
-  "activationCommands": {
-    "atom-workspace": [
-      "ebuild:digest"
-    ],
-    "atom-text-editor": [
-      "core:save"
-    ]
-  },
   "configSchema": {
     "updateManifestOnSave": {
       "type": "boolean",
