@@ -1,6 +1,6 @@
 {
   "name": "language-gentoo",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Gentoo Linux development package",
   "scripts": {
     "lint": "coffeelint ${CI:--quiet} **/*.{cson,coffee}",
