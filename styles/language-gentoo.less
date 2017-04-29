@@ -1,44 +1,55 @@
 @import "ui-variables";
 
-atom-text-editor::shadow {
-  .source.gentoo {
-    .atom {
-      color: darken(@ui-site-color-1, 20%);
+atom-text-editor {
+  &.editor {
+    .syntax--source {
+      &.syntax--gentoo {
 
-      .operator {
-        color: lighten(@ui-site-color-1, 30%);
-      }
-
-      .category, .package {
+        // Gentoo atom
+        .syntax--atom {
           color: @ui-site-color-1;
-      }
 
-      .version, .revision {
-        color: @ui-site-color-1;
-      }
-    }
+          .syntax--operator {
+            color: @text-color-warning;
+          }
 
-    .use-flag {
-      &.add {
-        color: @ui-site-color-2;
-      }
-      &.remove {
-        color: @ui-site-color-3;
-      }
-    }
+          .syntax--category {
+            color: darken(@ui-site-color-1, 10%);
+          } 
+          
+          .syntax--package {
+            color: lighten(@ui-site-color-1, 10%);
+          }
 
-    .keyword {
+          .syntax--version, .syntax--revision {
+            color: @ui-site-color-1;
+          }
+        }
+        
+        // Gentoo use
+        .syntax--use-flag {
+          &.syntax--add {
+            color: @ui-site-color-2;
+          }
+          &.syntax--remove {
+            color: @ui-site-color-3;
+          }
+        }
+        
+        // Gentoo keyword
+        .syntax--keyword {
+          .syntax--testing {
+            color: @text-color-warning;
+          }
 
-      .testing {
-        color: @text-color-warning;
-      }
+          .syntax--stable {
+            color: @text-color-error;
+          }
 
-      .stable {
-        color: @text-color-error;
-      }
-
-      .all {
-        color: @text-color-info;
+          .syntax--all {
+            color: @text-color-info;
+          }
+        }
       }
     }
   }
