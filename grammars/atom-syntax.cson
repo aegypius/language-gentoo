@@ -2,6 +2,10 @@
 'scopeName':  'source.gentoo'
 'patterns': [
   {
+    'match': '#.*\\n'
+    'name': 'comment'
+  },
+  {
     'include': '#gentoo-atom-syntax'
   }
 ]

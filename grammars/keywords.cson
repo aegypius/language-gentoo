@@ -4,10 +4,6 @@
 'fileTypes': ['keywords']
 'patterns': [
   {
-    'match': '#.*\\n'
-    'name': 'comment'
-  },
-  {
     'include': 'source.gentoo'
   },
   {
