@@ -1,3 +1,4 @@
+# coffeelint: disable=max_line_length
 '.source.shell.ebuild':
   'Ebuild Template':
     'prefix': 'eapi'
