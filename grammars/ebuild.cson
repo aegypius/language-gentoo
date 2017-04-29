@@ -1,3 +1,4 @@
+# coffeelint: disable=max_line_length
 'name':       'Ebuild'
 'scopeName' : 'source.shell.ebuild'
 'fileTypes': ['ebuild', 'eclass']
