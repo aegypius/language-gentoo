@@ -2,7 +2,7 @@
 'scopeName':  'source.gentoo'
 'patterns': [
   {
-    'match': '#.*\\n'
+    'match': '#.*$'
     'name': 'comment'
   },
   {

@@ -68,7 +68,7 @@
     'patterns' : [
       {
         'begin': '\\b(EAPI|DESCRIPTION|HOMEPAGE|SRC_URI|LICENSE|SLOT|KEYWORDS|IUSE|REQUIRED_USE|RESTRICT|(R|P)?DEPEND|S|PROPERTIES|DOCS)='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.core.ebuild'
@@ -83,7 +83,7 @@
     'patterns' : [
       {
         'begin': '\\b(QA_.*)='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.qa.ebuild'
@@ -98,7 +98,7 @@
     'patterns' : [
       {
         'begin': '\\b(ECVS_(SERVER|MODULE|BRANCH|AUTH|USER|PASS|TOPDIR|CVS_OPTIONS))='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.cvs.ebuild'
@@ -113,7 +113,7 @@
     'patterns' : [
       {
         'begin': '\\b(ESVN_(REPO_URI|STORE_DIR|PROJECT|BOOTSTRAP|PATCHES))='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.svn.ebuild'
@@ -128,7 +128,7 @@
     'patterns' : [
       {
         'begin': '\\b(EGIT_(USE_GIT_R3|(SOURCE|STORE)_DIR|HAS_SUBMODULES|OPTIONS|MASTER|PROJECT|DIR|REPO_URI|BRANCH|COMMIT|REPACK|PRUNE|NONBARE|NOUNPACK))='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.git.ebuild'
@@ -143,7 +143,7 @@
     'patterns' : [
       {
         'begin': '\\b(EPATCH_(SOURCE|SUFFIX|OPTS|EXCLUDE|FORCE))='
-        'end': '\\n'
+        'end': '$'
         'captures':
           '1':
             'name': 'support.constant.epatch.ebuild'
@@ -158,7 +158,7 @@
     'patterns' : [
       {
         'begin': '\\b(inherit)\\b'
-        'end': '\\n'
+        'end': '$'
         'beginCaptures':
           '0' :
             'name': 'storage.modifier.shell'
