@@ -1,5 +1,24 @@
 # coffeelint: disable=max_line_length
 '.source.shell.ebuild':
-  'Ebuild Template':
+  'EAPI 6 Template':
     'prefix': 'eapi'
-    'body': '# Copyright 1999-2014 Gentoo Foundation\n# Distributed under the terms of the GNU General Public License v2\n# $Header: $\n\nEAPI=${1:5}\n\nDESCRIPTION="${2}"\nHOMEPAGE="${3}"\nSRC_URI="${4}"\n\nLICENSE="${5}"\nSLOT="${6:0}"\nKEYWORDS="${7}"\nIUSE="${8}"\n\nDEPEND="${9}"\nRDEPEND="${10:${9}}"\n$0\n'
+    'body': """
+      # Copyright 1999-${1:2018} Gentoo Foundation
+      # Distributed under the terms of the GNU General Public License v2
+      # $Header: $
+
+      EAPI=${2:6}
+      DESCRIPTION="${3}"
+      HOMEPAGE="${4}"
+      SRC_URI="${5}"
+
+      LICENSE="${6}"
+      SLOT="${7:0}"
+      KEYWORDS="${8}"
+      IUSE="${9}"
+
+      DEPEND="${10}"
+      RDEPEND="${11:${10}}"
+
+      $0
+    """
