@@ -67,7 +67,7 @@
   'ebuild-variables-core':
     'patterns' : [
       {
-        'begin': '\\b(EAPI|DESCRIPTION|HOMEPAGE|SRC_URI|LICENSE|SLOT|KEYWORDS|IUSE|REQUIRED_USE|RESTRICT|(R|P)?DEPEND|S|PROPERTIES|DOCS)='
+        'begin': '\\b(EAPI|DESCRIPTION|HOMEPAGE|SRC_URI|LICENSE|SLOT|KEYWORDS|IUSE|REQUIRED_USE|RESTRICT|(R|P)?DEPEND|S|PROPERTIES|DOCS|HTML_DOCS|PATCHES)='
         'end': '$'
         'captures':
           '1':
