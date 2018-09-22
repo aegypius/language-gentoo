@@ -1,6 +1,6 @@
 # coffeelint: disable=max_line_length
-'name':       'Ebuild'
-'scopeName' : 'source.shell.ebuild'
+'name': 'Ebuild'
+'scopeName': 'source.shell.ebuild'
 'fileTypes': ['ebuild', 'eclass']
 'patterns': [
   {
@@ -18,24 +18,24 @@
 ]
 'repository':
   'ebuild-defined-variables':
-    'patterns' : [
+    'patterns': [
       {
-        'include' : '#ebuild-variables-core'
+        'include': '#ebuild-variables-core'
       }
       {
-        'include' : '#ebuild-variables-qa'
+        'include': '#ebuild-variables-qa'
       }
       {
-        'include' : '#ebuild-variables-epatch'
+        'include': '#ebuild-variables-epatch'
       }
       {
-        'include' : '#ebuild-variables-cvs'
+        'include': '#ebuild-variables-cvs'
       }
       {
-        'include' : '#ebuild-variables-svn'
+        'include': '#ebuild-variables-svn'
       }
       {
-        'include' : '#ebuild-variables-git'
+        'include': '#ebuild-variables-git'
       }
       {
         'begin': '\\b(if)\\b'
@@ -65,14 +65,14 @@
       }
     ]
   'ebuild-variables-core':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(EAPI|DESCRIPTION|HOMEPAGE|SRC_URI|LICENSE|SLOT|KEYWORDS|IUSE|REQUIRED_USE|RESTRICT|(R|P)?DEPEND|S|PROPERTIES|DOCS|HTML_DOCS|PATCHES)='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.core.ebuild'
-        'patterns' : [
+        'patterns': [
           {
             'include': 'source.shell'
           }
@@ -80,150 +80,150 @@
       }
     ]
   'ebuild-variables-qa':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(QA_.*)='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.qa.ebuild'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : 'source.shell'
+            'include': 'source.shell'
           }
         ]
       }
     ]
   'ebuild-variables-cvs':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(ECVS_(SERVER|MODULE|BRANCH|AUTH|USER|PASS|TOPDIR|CVS_OPTIONS))='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.cvs.ebuild'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : 'source.shell'
+            'include': 'source.shell'
           }
         ]
       }
     ]
   'ebuild-variables-svn':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(ESVN_(REPO_URI|STORE_DIR|PROJECT|BOOTSTRAP|PATCHES))='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.svn.ebuild'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : 'source.shell'
+            'include': 'source.shell'
           }
         ]
       }
     ]
   'ebuild-variables-git':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(EGIT_(USE_GIT_R3|(SOURCE|STORE)_DIR|HAS_SUBMODULES|OPTIONS|MASTER|PROJECT|DIR|REPO_URI|BRANCH|COMMIT|SUBMODULES|REPACK|PRUNE|NONBARE|NOUNPACK))='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.git.ebuild'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : 'source.shell'
+            'include': 'source.shell'
           }
         ]
       }
     ]
   'ebuild-variables-epatch':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(EPATCH_(SOURCE|SUFFIX|OPTS|EXCLUDE|FORCE))='
         'end': '$'
         'captures':
           '1':
             'name': 'support.constant.epatch.ebuild'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : 'source.shell'
+            'include': 'source.shell'
           }
         ]
       }
     ]
   'inherit':
-    'patterns' : [
+    'patterns': [
       {
         'begin': '\\b(inherit)\\b'
         'end': '$'
         'beginCaptures':
-          '0' :
+          '0':
             'name': 'storage.modifier.shell'
-        'patterns' : [
+        'patterns': [
           {
-            'include' : '#core-eclass'
+            'include': '#core-eclass'
           }
         ]
       }
     ]
   'core-eclass':
-    'patterns' : [
+    'patterns': [
       {
-        'begin' : '\\b\\s+(alternative|apache-(2|module)|aspell-dict|autotools(-(multilib|utils))?|base|bash-completion(-r1)?|boost-utils|bsdmk|bzr|cannadic|cdrom|check-reqs|chromium|clutter|cmake-utils|confutils|cron|cvs|darcs|depend.(apache|php)|distutils|elisp(-common)?|emboss|enlightenment|eutils|fdo-mime|findlib|fixheadtails|flag-o-matic|font|fortran-2|freedict|gdesklets|gems|ghc-package|git-2|gnome2-utils|gnome\\.org|gnustep-(2|base)|go-mono|gpe|gst-plugins-(bad|base|good|ugly)|gtk-sharp-module|haskell-cabal|intel-sdp|java-(pkg|pkg-opt|virtuals|vm)-2|kde4-(base|fucntions|meta(-pkg)?)|l10n|latex-package|leechcraft|libtool|linux-(info|mod)|makeedit|mercurial|mono|multilib|multiprocessing|myspell-r2|mysql(-(autotools|cmake|v2))?|mythtv(-plugins)?|nsplugins|nvidia-driver|oasis|obs-(download|service)|office-ext|openib|pam|pax-utils|perl-module|php(-common-r1|confutils|-ext(base-r1|pecl-r2|source-r2)|-ezc|-lib-r1|-pear(-lib)?-r1)|prefix|python(-(any-r1|distutils-ng|r1|single-r1|utils-r1))?|qmail|qt4-(build|r2)|rpm|ruby-(fakegem|ng(-gnome2)?)|savedconfig|scons-utils|selinux-policy-2|sgml-catalog|ssl-cert|subversion|systemd|texlive-(common|module)|toolchain-funcs|twisted|udev|unpacker|user|vala|vcs-snapshot|vdr-plugin(-2)?|versionator|virtualx|virtuoso|vmware-bundle|waf-utils|wxwidgets|xemacs-(elisp(-common)?|packages)|xfconf|x-modular|xorg-2)'
-        'captures' :
+        'begin': '\\b\\s+(alternatives|ant-tasks|apache-(2|apache-module)|aspell-dict-r1|autotools(-multilib|-utils)?|base|bash-completion-r1|bsdmk|bzr|cannadic|cargo|cdrom|check-reqs|chromium-2|cmake(-multilib|-utils)?|common-lisp-3|cron|cuda|cvs|darcs|db|db-use|depend.apache|desktop|distutils-r1|dotnet|eapi7-ver|elisp(-common)?|emboss-r2|enlightenment|epatch|epunt-cxx|estack|eutils|fcaps|fdo-mime|findlib|fixheadtails|flag-o-matic|font(-ebdftopcf)?|fortran-2|fox|freebsd|freedict|games(-mods)?|ghc-package|git-(2|r3)|gkrellm-plugin|gnome2(-utils)?|gnome(.org|-python-common-r1)|gnuconfig|gnustep-(2|base)|golang-(base|build|vcs|vcs-snapshot)|gstreamer|haskell-cabal|java-(ant-2|osgi|pkg-2|pkg-opt-2|pkg-simple|utils-2|virtuals-2|vm-2)|kde5(-functions|-meta-pkg)?|kernel-2|kodi-addon|l10n|latex-package|leechcraft|libretro-core|libtool|linux-(info|mod)|llvm|ltprune|mate(-desktop.org)?|mercurial|meson|mono(-env)?|mount-boot|mozconfig-v6.(45|52|58|60)|mozcoreconf-v(4|5|6)|mozextension|mozlinguas-v2|multibuild|multilib(-build|-minimal)?|multiprocessing|myspell(-r2)?|mysql_fx|mysql-(cmake|multilib-r1|v2)|netsurf|ninja-utils|nsplugins|nvidia-driver|oasis|obs-(download|service)|office-ext-r1|opam|openib|out-of-source|pam|pax-utils|perl-(app|functions|module)|php-(ext-pecl-r3|ext-source-r2|ext-source-r3|pear-r2)|portability|postgres(-multi)?|prefix|preserve-libs|python-(any-r1|r1|single-r1|utils-r1)|qmake(-utils)?|qt5-build|readme.gentoo(-r1)?|rebar|ros-catkin|rpm|ruby-(fakegem|ng|ng-gnome2|single|utils)|s6|savedconfig|scons-utils|scsh|selinux-policy-2|sgml-catalog|ssl-cert|stardict|subversion|sword-module|systemd|texlive-(common|module)|tmpfiles|toolchain(-autoconf|-binutils|-funcs|-glibc)?|twisted-r1|udev|unpacker|user|vala|vcs-(clean|snapshot)|vdr-plugin-2|versionator|vim-(doc|plugin|spell)|virtualx|waf-utils|webapp|wxwidgets|xdg|xdg-utils|xemacs-(elisp|elisp-common|packages)|xfconf|xorg-2)'
+        'captures':
           '1':
             'name': 'entity.name.type.object.eclass'
         'end': '\\b'
       }
     ]
   'ebuild-function':
-    'patterns' : [
+    'patterns': [
       {
-        'begin':'\\b((default_)?pkg_(pretend|nofetch|setup|preinst|postinst|prerm|postrm|config|info))'
+        'begin': '\\b((default_)?pkg_(pretend|nofetch|setup|preinst|postinst|prerm|postrm|config|info))'
         'captures':
           '1':
             'name': 'support.function.core.ebuild'
         'end': '\\b'
       }
       {
-        'begin':'\\b((default_)?src_(unpack|prepare|configure|compile|test|install))'
+        'begin': '\\b((default_)?src_(unpack|prepare|configure|compile|test|install))'
         'captures':
           '1':
             'name': 'support.function.core.ebuild'
         'end': '\\b'
       }
       {
-        'include' : '#ebuild-function-core-message'
+        'include': '#ebuild-function-core-message'
       }
       {
-        'include' : '#ebuild-function-core-query'
+        'include': '#ebuild-function-core-query'
       }
       {
-        'include' : '#ebuild-function-core-unpack'
+        'include': '#ebuild-function-core-unpack'
       }
       {
-        'include' : '#ebuild-function-core-prepare'
+        'include': '#ebuild-function-core-prepare'
       }
       {
-        'include' : '#ebuild-function-core-configure'
+        'include': '#ebuild-function-core-configure'
       }
       {
-        'include' : '#ebuild-function-core-compile'
+        'include': '#ebuild-function-core-compile'
       }
       {
-        'include' : '#ebuild-function-core-install'
+        'include': '#ebuild-function-core-install'
       }
       {
-        'include' : '#ebuild-function-core-preinst'
+        'include': '#ebuild-function-core-preinst'
       }
     ]
   'ebuild-function-core-message':
     'patterns': [
       {
-        'begin':'\\b(einfo|einfon|elog|ewarn|eerror|ebegin|eend)'
+        'begin': '\\b(einfo|einfon|elog|ewarn|eerror|ebegin|eend)'
         'captures':
           '1':
             'name': 'support.function.core.unpack.ebuild'
@@ -233,7 +233,7 @@
   'ebuild-function-core-query':
     'patterns': [
       {
-        'begin':'\\b(use(q|v|_enable|_use_with)?|has(q|v|_version)?|best_version)'
+        'begin': '\\b(use(q|v|_enable|_use_with)?|has(q|v|_version)?|best_version)'
         'captures':
           '1':
             'name': 'support.function.core.unpack.ebuild'
@@ -243,7 +243,7 @@
   'ebuild-function-core-unpack':
     'patterns': [
       {
-        'begin':'\\b(unpack)'
+        'begin': '\\b(unpack)'
         'captures':
           '1':
             'name': 'support.function.core.unpack.ebuild'
@@ -253,7 +253,7 @@
   'ebuild-function-core-prepare':
     'patterns': [
       {
-        'begin':'\\b(epatch)'
+        'begin': '\\b(epatch)'
         'captures':
           '1':
             'name': 'support.function.core.prepare.ebuild'
@@ -263,7 +263,7 @@
   'ebuild-function-core-configure':
     'patterns': [
       {
-        'begin':'\\b(econf)'
+        'begin': '\\b(econf)'
         'captures':
           '1':
             'name': 'support.function.core.configure.ebuild'
@@ -273,7 +273,7 @@
   'ebuild-function-core-compile':
     'patterns': [
       {
-        'begin':'\\b(emake)'
+        'begin': '\\b(emake)'
         'captures':
           '1':
             'name': 'support.function.core.compile.ebuild'
@@ -283,7 +283,7 @@
   'ebuild-function-core-install':
     'patterns': [
       {
-        'begin':'\\b(emake|einstall|into|insinto|exeinto|docinto|insopts|diropts|exeopts|libopts|dobin|doconfd|dodir|dodoc|doenvd|doexe|dohard|dohtml|doinfo|doinitd|doins|dolib|dolib\.a|dolib\.so|doman|domo|dosbin|dosym|fowners|fperms|keepdir|newbin|newconfd|newdoc|newenvd|newexe|newinitd|newins|newlib\.a|newlib\.so|newman|newsbin)'
+        'begin': '\\b(emake|einstall|into|insinto|exeinto|docinto|insopts|diropts|exeopts|libopts|dobin|doconfd|dodir|dodoc|doenvd|doexe|dohard|dohtml|doinfo|doinitd|doins|dolib|dolib\.a|dolib\.so|doman|domo|dosbin|dosym|fowners|fperms|keepdir|newbin|newconfd|newdoc|newenvd|newexe|newinitd|newins|newlib\.a|newlib\.so|newman|newsbin)'
         'captures':
           '1':
             'name': 'support.function.core.install.ebuild'
@@ -293,7 +293,7 @@
   'ebuild-function-core-preinst':
     'patterns': [
       {
-        'begin':'\\b(enewgroup|enewuser)'
+        'begin': '\\b(enewgroup|enewuser)'
         'captures':
           '1':
             'name': 'support.function.core.preinst.ebuild'

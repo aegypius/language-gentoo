@@ -6,7 +6,7 @@
         'label': 'Gentoo Commands'
         'submenu': [
           {
-            'label':   'Update ebuild manifest'
+            'label': 'Update ebuild manifest'
             'command': 'ebuild:digest'
           }
         ]
