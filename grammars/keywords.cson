@@ -1,7 +1,7 @@
 # coffeelint: disable=max_line_length
-'name':       'Gentoo keyword file'
+'name': 'Gentoo keyword file'
 'fileTypes': ['keywords', 'package.mask']
-'scopeName' : 'source.gentoo.keywords'
+'scopeName': 'source.gentoo.keywords'
 'patterns': [
   {
     'include': 'source.gentoo'

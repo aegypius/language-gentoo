@@ -1,5 +1,5 @@
 # coffeelint: disable=max_line_length
-'scopeName':  'source.gentoo'
+'scopeName': 'source.gentoo'
 'patterns': [
   {
     'match': '#.*$'
@@ -11,7 +11,7 @@
 ]
 'repository':
   'gentoo-atom-syntax':
-    'patterns' : [
+    'patterns': [
       {
         'name': 'atom'
         'match': "(<=?|=|>=?)?([^\/]+)\/((?:\\w+(?:-[a-z]+)*|\\*))(?:(?:-([\\d\\.]*(?:_(?:alpha|beta|pre|rc|p)\\d*)?)(?:-(r\\d+))?))?(?:\:(\\b[^:\\s]+\\b))?(?:::(\\b\\w+\\b))?"
